@@ -1,0 +1,97 @@
+#databaseChangeLog:
+#  - logicalFilePath: db/changelog/db.changelog-master.yaml
+#  - changeSet:
+#    id: 1
+#    author: root
+#    changes:
+#      - createTable:
+#         tableName: users
+#         columns:
+#           - column:
+#             name: user_id
+#             type: INT
+#             autoIncrement: true
+#             constraints:
+#               primaryKey: true
+#               nullable: false
+#           - column:
+#             name: user_name
+#             type: varchar(50)
+#           - column:
+#             name: email
+#             type: varchar(255)
+#             constaints:
+#               unique: true
+#               nullable: false
+#           - colunm:
+#             name: password
+#             type: varchar(255)
+#             constaints:
+#               nullable: false
+#           - column:
+#             name: role
+#             type: varchar(50)
+#  - changeSet:
+#      id: 2
+#      author: root
+#      changes:
+#        - createTable:
+#        tableName: todos
+#        columns:
+#          - column:
+#            name: todo_id
+#            type: INT
+#            autoIncrement: true
+#            constraints:
+#               primaryKey: true
+#               nullable: false
+#          - column:
+#            name: name
+#            type: varchar(50)
+#          - column:
+#            name: time_of_creation
+#            type: varchar(50)
+#          - column:
+#            name: status
+#            type: varchar(50)
+#  - changeSet:
+#      id: 3
+#      author: root
+#      comment: "Create admin user"
+#      changes:
+#        - insert:
+#           tableName: users
+#           columns:
+#             - column:
+#               name: user_name
+#               value: "Andriy"
+#             - column:
+#               name: email
+#               value: "andriy@gmail.com"
+#             - column:
+#               name: password
+#               value: "Andriy"
+#             - column:
+#               name: role
+#               value: admin
+#        - insert:
+#                  tableName: users
+#                  columns:
+#                    - column:
+#                       name: user_name
+#                       value: "Ivan"
+#                    - column:
+#                       name: email
+#                       value: "ivan@gmail.com"
+#                    - column:
+#                       name: password
+#                       value: "Ivan"
+#                    - column:
+#                       name: role
+#                       value: user
+#        rollback:
+#          - delete:
+#             tableName: users
+#             where: userName in ("Andriy", "Ivan")
+
+
