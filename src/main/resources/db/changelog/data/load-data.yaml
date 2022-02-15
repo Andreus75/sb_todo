@@ -7,6 +7,9 @@ databaseChangeLog:
         - loadData:
            tableName: users
            columns:
+           - column:
+               name: user_id
+               value: 1
              - column:
                name: user_name
                value: "Andriy"
@@ -22,6 +25,9 @@ databaseChangeLog:
         - loadData:
                   tableName: users
                   columns:
+                  - column:
+                       name: user_id
+                       value: 2
                     - column:
                        name: user_name
                        value: "Ivan"
@@ -34,3 +40,18 @@ databaseChangeLog:
                     - column:
                        name: role
                        value: user
+        - loadData:
+                          tableName: todos
+                          columns:
+                          - column:
+                               name: todo_id
+                               value: 1
+                            - column:
+                               name: name
+                               value: "Todo1"
+                            - column:
+                               name: time_of_creation
+                               value: "11:00"
+                            - column:
+                               name: status
+                               value: "New"
