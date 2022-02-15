@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import ua.com.andriy.sb_todo.entity.Todo;
+import ua.com.andriy.sb_todo.entity.User;
 import ua.com.andriy.sb_todo.services.todoService.TodoService;
 
 import java.util.List;
@@ -36,8 +37,10 @@ public class TodoController {
     }
 
     @DeleteMapping("/todo/todo_id")
-    public void deleteTodoById (int todo_id) {
-        todoService.deleteTodoById(todo_id);
+    public void deleteTodoById (User userAuth, int todo_id) {
+        if (userAuth.getRole().equals("Admin")) {
+            todoService.deleteTodoById(todo_id);
+        }
     }
 
 
