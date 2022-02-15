@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+    id: 1
+    author: Andriy
+    changes:
+      - createTable:
+         tableName: users
+         columns:
+           - column:
+             name: user_id
+             type: INT
+             autoIncrement: true
+             constraints:
+               primaryKey: true
+               nullable: false
+           - column:
+             name: user_name
+             type: varchar(255)
+           - column:
+             name: email
+             type: varchar(255)
+             constaints:
+               unique: true
+               nullable: false
+           - colunm:
+             name: password
+             type: varchar(512)
+             constaints:
+               nullable: false
+           - column:
+             name: role
+             type: varchar(50)
+#  - changeSet:
+#      id: 2
+#      author: Andriy
+#      changes:
+#        - createTable:
+        tableName: todos
+        columns:
+          - column:
+            name: todo_id
+            type: INT
+            autoIncrement: true
+            constraints:
+               primaryKey: true
+               nullable: false
+          - column:
+            name: name
+            type: varchar(50)
+          - column:
+            name: time_of_creation
+            type: varchar(50)
+          - column:
+            name: status
+            type: varchar(50)

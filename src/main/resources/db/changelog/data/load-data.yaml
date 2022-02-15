@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Andriy
+      comment: "Create user"
+      changes:
+        - loadData:
+           tableName: users
+           columns:
+             - column:
+               name: user_name
+               value: "Andriy"
+             - column:
+               name: email
+               value: "andriy@gmail.com"
+             - column:
+               name: password
+               value: "Andriy"
+             - column:
+               name: role
+               value: admin
+        - loadData:
+                  tableName: users
+                  columns:
+                    - column:
+                       name: user_name
+                       value: "Ivan"
+                    - column:
+                       name: email
+                       value: "ivan@gmail.com"
+                    - column:
+                       name: password
+                       value: "Ivan"
+                    - column:
+                       name: role
+                       value: user
